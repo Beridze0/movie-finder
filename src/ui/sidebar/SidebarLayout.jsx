@@ -9,18 +9,19 @@ export default function SidebarLayout() {
     <div className="px-3">
       <Header />
 
-      <Outlet />
+      <div className="flex">
+        {/* Sidebar */}
+        <div className="flex w-fit flex-col items-center gap-3">
+          {/* Menu */}
+          <SidebarMenu title="Menu" items={menu} />
 
-      {/* Sidebar */}
-      <div className="flex w-fit flex-col items-center gap-3">
-        {/* Menu */}
-        <SidebarMenu title="Menu" items={menu} />
+          {/* My LIbrary */}
+          <SidebarMenu title="My Library" items={myLibrary} />
 
-        {/* My LIbrary */}
-        <SidebarMenu title="My Library" items={myLibrary} />
-
-        {/* Settings */}
-        <SidebarMenu title="Settings" items={settings} />
+          {/* Settings */}
+          <SidebarMenu title="Settings" items={settings} />
+        </div>
+        <Outlet />
       </div>
     </div>
   );
